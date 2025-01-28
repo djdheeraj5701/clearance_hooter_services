@@ -6,13 +6,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
-public class ItemMetadata {
+public class User {
     private Long id;
     private String name;
-    private String description;
+    private Double walletAmount;
 }

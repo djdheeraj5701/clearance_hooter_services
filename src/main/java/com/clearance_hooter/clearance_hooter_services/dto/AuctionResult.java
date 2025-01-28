@@ -11,9 +11,9 @@ import java.util.List;
 @Setter
 @Builder
 @AllArgsConstructor
-public class Item {
-    private Long id;
-    private String name;
-    private String description;
-    private String imageUrl;
+public class AuctionResult {
+    private Auction auction;
+    private List<Bidding> winBiddings;
+    private List<Long> unsoldItemIds;
+    private Double totalAmountReceived;
 }
