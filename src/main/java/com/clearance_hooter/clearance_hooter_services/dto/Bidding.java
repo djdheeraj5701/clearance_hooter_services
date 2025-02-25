@@ -1,9 +1,7 @@
 package com.clearance_hooter.clearance_hooter_services.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.sql.Timestamp;
 
@@ -11,11 +9,23 @@ import java.sql.Timestamp;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "BIDDING")
 public class Bidding {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "item_id", nullable = false)
     private Long itemId;
+
+    @Column(name = "bidder_id", nullable = false)
     private Long bidderId;
-    private String bidderName;
-    private Double amountPlaced;
+
+    @Column(nullable = false)
+    private Long amount;
+
+    @Column(nullable = false)
     private Timestamp timestamp;
 }

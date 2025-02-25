@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Bidder { // Bidder is different from User because this will contain a portion of User's data
     private Long id;
     private String name;
     private Long walletAmount;

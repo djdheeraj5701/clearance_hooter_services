@@ -1,4 +1,4 @@
-package com.clearance_hooter.clearance_hooter_services.security;
+package com.clearance_hooter.clearance_hooter_services.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,15 +9,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-  
-  @Bean
-  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    return http
-        .authorizeHttpRequests(
-            authorize -> authorize
-                .anyRequest()
-                .permitAll()
-        )
-        .build();
-  }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests(
+                        authorize -> authorize
+                                .anyRequest()
+                                .permitAll()
+                )
+                .build();
+    }
 }

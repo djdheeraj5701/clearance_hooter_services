@@ -1,21 +1,19 @@
 package com.clearance_hooter.clearance_hooter_services.dto;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Auction {
     private Long id;
     private String name;
-    private LocalDateTime started_at;
-    private LocalDateTime ended_at;
+    private Timestamp startedAt;
+    private Timestamp endedAt;
     private List<Item> items;
 }

@@ -1,19 +1,28 @@
 package com.clearance_hooter.clearance_hooter_services.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "AUCTION_METADATA")
 public class AuctionMetadata {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String name;
-    private LocalDateTime started_at;
-    private LocalDateTime ended_at;
+
+    @Column(name = "started_at", nullable = false)
+    private Timestamp startedAt;
+
+    @Column(name = "ended_at")
+    private Timestamp endedAt;
 }
